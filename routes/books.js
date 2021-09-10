@@ -1,7 +1,6 @@
 const express = require ('express');
 const router = express.Router();
 const Book = require('../models/book');
-const uploadPath = path.join('public',Book.coverImageBasePath);
 
 const Author = require('../models/author');
 const { request } = require('express');
