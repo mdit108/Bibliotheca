@@ -13,7 +13,7 @@
 <div>
     Description : <%= book.description %>
 </div>
-
+<a href="/books/<%=book.id%>/download">Download Book</a>
 <a href="/books/<%= book.id %>/edit">Edit</a>
 <%- include ('../partials/deleteform', {url:`/books/${book.id}`}) %>
 <a href="/authors/<%= book.author.id %>">View Author</a>

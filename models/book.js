@@ -30,6 +30,14 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    bookDoc:{
+        type: Buffer,
+        required: true
+    },
+    bookDocType: {
+        type: String,
+        required: true,
+    },
     author:{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
@@ -40,6 +48,12 @@ const bookSchema = new mongoose.Schema({
 bookSchema.virtual('coverImagePath').get(function(){
     if (this.coverImage != null && this.coverImageType != null){
         return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }
+})
+
+bookSchema.virtual('bookDocPath').get(function(){
+    if (this.bookDoc != null && this.bookDocType != null){
+        return `data:${this.bookDocType};charset=utf-8;base64,${this.bookDoc.toString('base64')}`
     }
 })
 
