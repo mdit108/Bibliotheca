@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Patrick+Hand&display=swap");
+
+@import "shared/variables.css";
+@import "shared/buttons.css";
+@import "shared/form.css";
+@import "shared/authors.css";
+@import "shared/books.css";
+:root,
+body {
+  /* font-family: "Patrick Hand", cursive; */
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  color: var(--color-text-light);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    to right,
+    var(--color-background-dark),
+    var(--color-background-light)
+  );
+}
+
+.innerContainer {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.page-header {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.errormsg {
+  color: hsl(var(--color-danger-hue), 100%, 50%);
+}
