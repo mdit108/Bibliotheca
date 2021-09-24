@@ -114,6 +114,9 @@ router.put('/:id',async (req,res)=>{
         if (req.body.cover != null && req.body.cover !== ''){
             saveCover(book,req.body.cover)
         }
+        if (req.body.bookpdf != null && req.body.bookpdf !== ''){
+            savePDF(book,req.body.bookpdf)
+        }
         await book.save()
         res.redirect(`/books/${book.id}`);
     }
